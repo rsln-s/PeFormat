@@ -1,19 +1,19 @@
-.686						;for cmovg
-.MODEL FLAT
-.STACK
-.DATA
+;.686						;for cmovg
+;.MODEL FLAT
+;.STACK
+;.DATA
 .CODE
 
-;ecx - first arg
-;edx - second arg
-;eax - return value
-@min@8 PROC
-	mov eax, ecx
-	cmp ecx, edx
-	cmovg eax, edx			;if jg then do mov
+;rcx - first arg
+;rdx - second arg
+;rax - return value
+min PROC
+	mov rax, rcx
+	cmp rcx, rdx
+	cmovg rax, rdx			;if jg then do mov
 	ret
-@min@8 ENDP
+min ENDP
 
-;PUBLIC @min@8
+;PUBLIC min
 
 END
